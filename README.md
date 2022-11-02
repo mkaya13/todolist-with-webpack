@@ -6,6 +6,17 @@
 
 3 - Add the task items dynamically
 
+## Setup
+
+To use this project, you can simply follow the following steps
+
+To get a local copy up and running follow these simple example steps.
+
+- Clone the project on your local machine
+- Run npm install on the root directory to get the javascript packages
+- Build the project using npm run build
+- Run the server using npm start
+
 ## Built With
 
 - HTML
