@@ -1,3 +1,5 @@
+import Task from './taskClass.js';
+
 export const addTasksLocalStorage = (tasks) => {
   const str = JSON.stringify(tasks);
   localStorage.setItem('storedBookData', str);
@@ -35,10 +37,46 @@ export const changeIcons = (tasks) => {
     newElement.style = 'display:block';
     const { firstChild } = button;
     firstChild.addEventListener('input', () => {
-      tasks[index].description = firstChild.value;
-      addTasksLocalStorage(tasks);
+      if (firstChild.value !== '') {
+        tasks[index].description = firstChild.value;
+        addTasksLocalStorage(tasks);
+      }
     });
   }));
+};
+
+const checkBoxEvent = (tasks) => {
+  const checkBox = document.querySelectorAll('.check-square');
+
+  checkBox.forEach((button, index) => {
+    button.addEventListener('click', (event) => {
+      event.preventDefault();
+
+      const currentTask = tasks[index].completed;
+
+      if (currentTask === false) {
+        tasks[index].completed = true;
+        button.firstChild.className = 'fa-regular fa-square-check';
+      } else {
+        tasks[index].completed = false;
+        button.firstChild.className = 'fa-regular fa-square';
+      }
+
+      addTasksLocalStorage(tasks);
+    });
+  });
+};
+
+const updateCheckBoxes = () => {
+  const storageData = JSON.parse(localStorage.getItem('storedBookData'));
+  const checkBox = document.querySelectorAll('.check-square');
+  storageData.forEach((button, index) => {
+    if (button.completed === true) {
+      checkBox[index].firstChild.className = 'fa-regular fa-square-check';
+    } else {
+      checkBox[index].firstChild.className = 'fa-regular fa-square';
+    }
+  });
 };
 
 export const changeBackIcons = () => {
@@ -73,6 +111,8 @@ export const showItems = (toDoListHtml, tasks, taskList) => {
 
   addTasksLocalStorage(tasks);
   remove(tasks, toDoListHtml, taskList);
+  checkBoxEvent(tasks);
+  updateCheckBoxes();
   changeIcons(tasks);
   changeBackIcons();
 };
@@ -98,7 +138,8 @@ export const addTask = (taskItem, task, tasks, toDoListHtml, taskList) => {
     }
 
     if (task.value.length > 0) {
-      tasks.push({ description: task.value, completed: false, index: tasks.length + 1 });
+      const taskObject = new Task(task.value, false, tasks.length + 1);
+      tasks.push(taskObject);
 
       toDoListHtml.innerHTML = '';
 
@@ -107,7 +148,7 @@ export const addTask = (taskItem, task, tasks, toDoListHtml, taskList) => {
       += `
       <li class="list">
         <div class="task-item">
-          <span class="check-square"><i class="fa-regular fa-square"></i></span>
+          <span class="check-square"><i class="fa-regular fa-square" id="check-box"></i></span>
           <span class="label-text" id="label-text-${index}"><input class="task-paragraph" type="text" value="${element.description}"></span>
         </div>
         <button class="trash-btn" id="${index}"><i class="fa-regular fa-trash-can"></i></button>
@@ -120,8 +161,10 @@ export const addTask = (taskItem, task, tasks, toDoListHtml, taskList) => {
 
       addTasksLocalStorage(tasks);
       remove(tasks, toDoListHtml, taskList);
+      checkBoxEvent(tasks);
       changeIcons(tasks);
       changeBackIcons();
+      updateCheckBoxes();
     } else {
       defineWarning();
       setTimeout(resetWarning, 3000);
@@ -141,6 +184,24 @@ export const reload = (tasks, toDoListHtml, taskList) => {
   });
 };
 
+const clearSpan = document.querySelector('.clear-span');
+
+export const clearChecked = (toDoListHtml, taskList) => {
+  clearSpan.addEventListener('click', (event) => {
+    event.preventDefault();
+    let storedData = JSON.parse(localStorage.getItem('storedBookData'));
+    storedData = storedData.filter((task) => task.completed === false);
+    showItems(toDoListHtml, storedData, taskList);
+  });
+};
+
 export default {
-  addTasksLocalStorage, remove, showItems, changeIcons, changeBackIcons, addTask, reload,
+  addTasksLocalStorage,
+  remove,
+  showItems,
+  changeIcons,
+  changeBackIcons,
+  addTask,
+  reload,
+  clearChecked,
 };

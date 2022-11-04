@@ -2,8 +2,10 @@ import './index.css';
 import {
   addTask,
   reload,
+  clearChecked,
 }
-from './methods.js';
+from './modules/methods.js';
+import { showDateTime } from './modules/DateModul.js';
 
 const taskList = document.querySelector('.to-do-list-items');
 const taskItem = document.querySelector('.add-to-your-list');
@@ -17,3 +19,7 @@ toDoListHtml.className = 'check-box-and-task';
 addTask(taskItem, task, tasks, toDoListHtml, taskList);
 
 reload(tasks, toDoListHtml, taskList);
+
+clearChecked(toDoListHtml, taskList);
+
+setInterval(showDateTime, 1000);

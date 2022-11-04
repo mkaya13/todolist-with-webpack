@@ -1,3 +1,2 @@
 src/index.js
-server.js
-src/methods.js
+src/modules/methods.js
