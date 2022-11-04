@@ -39,6 +39,8 @@ To get a local copy up and running follow these simple example steps.
 
 ### To run Webpack
 
+- `npm run build`
+
 - `npm start`
 
 ### Prerequisites
