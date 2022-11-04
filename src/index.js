@@ -1,34 +1,19 @@
 import './index.css';
+import {
+  addTask,
+  reload,
+}
+from './methods.js';
 
-const taskItems = document.querySelector('.to-do-list-items');
+const taskList = document.querySelector('.to-do-list-items');
+const taskItem = document.querySelector('.add-to-your-list');
+const task = document.querySelector('#add-task');
 
-const tasks = [
-  {
-    description: 'wash the dishes',
-    completed: false,
-    index: 0,
-  },
-  {
-    description: 'complete To Do list project',
-    completed: false,
-    index: 1,
-  },
-];
+const tasks = [];
 
 const toDoListHtml = document.createElement('ul');
 toDoListHtml.className = 'check-box-and-task';
 
-for (let i = 0; i < tasks.length; i += 1) {
-  toDoListHtml.innerHTML
-  += `
-  <li>
-    <div class="task-item">
-      <span class="check-square"><i class="fa-regular fa-square"></i></span>
-      <p class="task-1">${tasks[i].description}</p>
-    </div>
-    <span class="ellipsis-vertical"><i class="fa-solid fa-ellipsis-vertical"></i></span>
-  </li>
-  `;
-}
+addTask(taskItem, task, tasks, toDoListHtml, taskList);
 
-taskItems.appendChild(toDoListHtml);
+reload(tasks, toDoListHtml, taskList);

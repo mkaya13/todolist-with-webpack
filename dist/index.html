@@ -18,11 +18,12 @@
             <span class="refresh-button"><i class="fa-solid fa-arrows-rotate"></i></span>
         </div>
 
-        <div class="add-to-your-list">
-            <p class="add">Add to your list...</p>
-            <span class="top-left-arrow"><i class="fa-solid fa-plus"></i></span>
-        </div>
-
+        <form class="add-to-your-list" method="post">
+            <input type="text" id="add-task" placeholder="Add to your list ...">
+            
+            <button type="submit"> <span class="top-left-arrow" ><i class="fa-solid fa-plus"></i></span></button>
+        </form>
+       
         <div class="to-do-list-items"> </div>
 
         <div class="clear-container">
@@ -32,9 +33,7 @@
 
     </section>
 
-    <footer>
-        <span></span>
-    </footer>
+    <h2 class="value-warning"></h2>
 
     <script src="https://kit.fontawesome.com/8551553121.js" crossorigin="anonymous"></script>
 </body>
