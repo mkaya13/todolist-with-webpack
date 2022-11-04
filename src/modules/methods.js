@@ -1,11 +1,11 @@
 import Task from './taskClass.js';
 
-export const addTasksLocalStorage = (tasks) => {
+const addTasksLocalStorage = (tasks) => {
   const str = JSON.stringify(tasks);
   localStorage.setItem('storedBookData', str);
 };
 
-export const remove = (tasks, toDoListHtml, taskList) => {
+const remove = (tasks, toDoListHtml, taskList) => {
   document.querySelectorAll('.trash-btn').forEach((button) => button.addEventListener('mousedown', (event) => {
     event.preventDefault();
     const { id } = button;
@@ -23,7 +23,7 @@ export const remove = (tasks, toDoListHtml, taskList) => {
   }));
 };
 
-export const changeIcons = (tasks) => {
+const changeIcons = (tasks) => {
   document.querySelectorAll('.label-text').forEach((button) => button.addEventListener('focusin', (event) => {
     event.preventDefault();
 
@@ -79,7 +79,7 @@ const updateCheckBoxes = () => {
   });
 };
 
-export const changeBackIcons = () => {
+const changeBackIcons = () => {
   document.querySelectorAll('.label-text').forEach((button) => button.addEventListener('focusout', (event) => {
     event.preventDefault();
     const { id } = button;
@@ -92,7 +92,7 @@ export const changeBackIcons = () => {
   }));
 };
 
-export const showItems = (toDoListHtml, tasks, taskList) => {
+const showItems = (toDoListHtml, tasks, taskList) => {
   toDoListHtml.innerHTML = '';
   for (let i = 0; i < tasks.length; i += 1) {
     toDoListHtml.innerHTML
@@ -196,11 +196,6 @@ export const clearChecked = (toDoListHtml, taskList) => {
 };
 
 export default {
-  addTasksLocalStorage,
-  remove,
-  showItems,
-  changeIcons,
-  changeBackIcons,
   addTask,
   reload,
   clearChecked,
