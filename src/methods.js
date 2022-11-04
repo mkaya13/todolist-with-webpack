@@ -129,6 +129,18 @@ export const addTask = (taskItem, task, tasks, toDoListHtml, taskList) => {
   });
 };
 
+export const reload = (tasks, toDoListHtml, taskList) => {
+  window.addEventListener('load', (event) => {
+    if (
+      localStorage.getItem('storedBookData') !== null && localStorage.getItem('storedBookData') !== '[]'
+    ) {
+      event.preventDefault();
+      tasks = JSON.parse(localStorage.getItem('storedBookData'));
+      showItems(toDoListHtml, tasks, taskList);
+    }
+  });
+};
+
 export default {
-  addTasksLocalStorage, remove, showItems, changeIcons, changeBackIcons, addTask,
+  addTasksLocalStorage, remove, showItems, changeIcons, changeBackIcons, addTask, reload,
 };
