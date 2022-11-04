@@ -54,7 +54,7 @@ nav {
 input {
   border: none;
   height: 30px;
-  width: 60%;
+  min-width: 230px;
   padding-left: 5px;
 }
 
@@ -110,6 +110,8 @@ span i:hover {
 
 .clear-span {
   font-size: 20px;
+  color: white;
+  cursor: pointer;
 }
 
 button {
@@ -131,4 +133,14 @@ button i:hover {
   color: red;
   display: none;
   padding-top: 2%;
+}
+
+.current-time {
+  padding: 20px 20px 0 75%;
+}
+
+@media (max-width: 768px) {
+  .to-do-list-section {
+    width: 60%;
+  }
 }

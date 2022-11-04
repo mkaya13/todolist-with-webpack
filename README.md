@@ -6,6 +6,10 @@
 
 3 - Add the task items dynamically
 
+## Live Version
+
+https://mkaya13.github.io/todolist-with-webpack/dist/index.html
+
 ## Setup
 
 To use this project, you can simply follow the following steps
