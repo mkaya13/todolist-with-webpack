@@ -47,8 +47,8 @@ nav {
   justify-content: space-between;
   background-color: white;
   border-style: ridge;
-  padding: 15px;
-  height: 50px;
+  padding: 1rem;
+  height: 3rem;
 }
 
 input {
@@ -77,7 +77,7 @@ input {
   align-items: center;
   align-content: center;
   border-style: ridge;
-  padding: 15px 15px 15px 15px;
+  padding: 1rem 1rem 1rem 1rem;
 }
 
 .task-item {
@@ -86,7 +86,7 @@ input {
   align-content: center;
   justify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 1rem;
 }
 
 span i {
@@ -104,8 +104,8 @@ span i:hover {
   justify-content: center;
   background-color: darkgray;
   border-style: ridge;
-  padding: 15px;
-  height: 50px;
+  padding: 1rem;
+  height: 3rem;
 }
 
 .clear-span {
@@ -136,7 +136,7 @@ button i:hover {
 }
 
 .current-time {
-  padding: 20px 20px 0 75%;
+  padding: 1.2rem 1.2rem 0 75%;
 }
 
 @media (max-width: 768px) {
