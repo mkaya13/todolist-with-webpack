@@ -1,10 +1,6 @@
 # TO-DO-LIST with Webpack
 
-1 - Establish the webpack
-
-2 - Build the css structure of to-do-list
-
-3 - Add the task items dynamically
+To-do-list project allows you to write tasks daily so that you will not forget to finish them! It allows you to add, remove, check, update the tasks. Furthermore you can also remove the completed tasks via checking them and clicking clear all completed!
 
 ## Live Version
 
@@ -28,6 +24,8 @@ To get a local copy up and running follow these simple example steps.
 - CSS
 
 - Javascript
+
+- Webpack
 
 - Lighthouse (An open-source, automated tool for improving the quality of web pages. It has audits for performance, accessibility, progressive web apps, SEO and more).
 
