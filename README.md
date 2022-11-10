@@ -27,6 +27,8 @@ To get a local copy up and running follow these simple example steps.
 
 - Webpack
 
+- Jest (for Tests)
+
 - Lighthouse (An open-source, automated tool for improving the quality of web pages. It has audits for performance, accessibility, progressive web apps, SEO and more).
 
 - Webhint (A customizable linting tool that helps you improve your site's accessibility, speed, cross-browser compatibility, and more by checking your code for best practices and common errors).

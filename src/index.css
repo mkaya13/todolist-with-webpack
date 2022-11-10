@@ -54,8 +54,16 @@ nav {
 input {
   border: none;
   height: 30px;
-  width: 75%;
+  width: 80%;
   padding-left: 5px;
+}
+
+.label-text {
+  width: 95%;
+}
+
+.label-text input {
+  width: 95%;
 }
 
 .to-do-list-items {
@@ -86,6 +94,7 @@ input {
   align-content: center;
   justify-content: center;
   align-items: center;
+  width: 100%;
   gap: 1rem;
 }
 
