@@ -17,3 +17,9 @@ export const clearAllCompleted = (taskList) => {
   });
   return taskList;
 };
+
+export default {
+  editTask,
+  updateCompleteStatus,
+  clearAllCompleted,
+};
