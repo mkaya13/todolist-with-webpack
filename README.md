@@ -47,6 +47,10 @@ To get a local copy up and running follow these simple example steps.
 
 - `npm start`
 
+### Tests
+
+- `npm run test`
+
 ### Prerequisites
 
 - Have a local version control like Git. Which is a open source distributed version control system designed for source code management
@@ -75,4 +79,4 @@ To get a local copy up and running follow these simple example steps.
 
 ## 📝 License
 
-- This project is [MIT](https://github.com/todolist-webpack//blob/main/LICENSE) licensed.
+- This project is [MIT](./LICENSE) licensed.
