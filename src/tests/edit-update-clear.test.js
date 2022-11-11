@@ -55,8 +55,6 @@ describe('updateCompleteStatus function tests', () => {
   it('Checks the updateCompleteStatus function', () => {
     const expectedTasks = clearAllCompleted(taskList);
 
-    console.log(expectedTasks);
-
     expect(newTaskList).toStrictEqual(expectedTasks);
   });
 });
