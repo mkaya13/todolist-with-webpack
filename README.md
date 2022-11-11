@@ -75,4 +75,4 @@ To get a local copy up and running follow these simple example steps.
 
 ## 📝 License
 
-- This project is [MIT](https://github.com/todolist-webpack//blob/main/LICENSE) licensed.
+- This project is [MIT](./LICENSE) licensed.
